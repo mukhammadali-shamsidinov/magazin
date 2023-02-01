@@ -1,21 +1,22 @@
 import React from 'react'
 import Sidebar from '../sidebar/sidebar'
 
-const Details = () => {
+const Details = ({details}) => {
+console.log(details);
   return (
     <div className='container'>
         <Sidebar />
         <div className="row">
             <div className="col-12 col-sm-12  col-md-6">
             <figure>
-                <img className='w-75' src="https://m.media-amazon.com/images/I/61-PblYntsL.jpg" alt="" />
+                <img className='w-75' src={details.image} alt="img" />
             </figure>
             </div>
             <div className="col-12 col-sm-12  col-md-6">
             <div className="params">
-                <h1>Lorem ipsum dolor sit amet.</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse tempora, quisquam obcaecati dolorum impedit aut nihil? Qui ad adipisci voluptatem sit quibusdam. Itaque numquam incidunt, pariatur alias recusandae magnam aut.</p>
-                <button className='btn btn-outline-success'>Add to Basket</button>
+                <h1>{details.title}</h1>
+                <p>{details.description}</p>
+                <button className='btn btn-outline-success'>Add to Basket <span>{details.price.toFixed(2)}💶</span></button>
             </div>
             </div>
         </div>

@@ -2,16 +2,14 @@ import React from 'react'
 import CardDB from './card'
 
 
-const Product = () => {
+const Product = ({posts}) => {
+  console.log(posts);
   return (
     <div className='container'>
         <div className="row">
-       <CardDB />
-       <CardDB />
-       <CardDB />
-       <CardDB />
-
-       
+       {posts.map(item=>(
+        <CardDB id={item.id} {...item} />
+       ))}
         </div>
     </div>
   )
